@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(page_title="User Profiles", layout="wide")
+
 # basic elements
 st.title("Streamlit Basics")
 st.write("This is where we will learn about streamlit basics")
