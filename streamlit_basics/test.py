@@ -13,8 +13,10 @@ st.divider()
 
 # text input
 name = st.text_input("What is your name?")
+mood = None
 if name:
     st.write(f"Welcome {name}, how are you doing today?")
+    mood = st.radio("select mood", ("good", "okay", "no-talking"), horizontal=True)
 
 # divider
 st.divider()
@@ -57,7 +59,13 @@ if st.button("Current Profile"):
 if "profiles" not in st.session_state:
     st.session_state.profiles = []
 
-new_profile = {"Name": name, "Age": age, "Gender": gender, "Interest": interest}
+new_profile = {
+    "Name": name,
+    "Age": age,
+    "Gender": gender,
+    "Interest": interest,
+    "Mood": mood,
+}
 
 if st.button("Save and show all profiles"):
     st.session_state.profiles.append(new_profile)
