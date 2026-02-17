@@ -318,7 +318,7 @@ if st.session_state.search_results:
                         bbox = det["bbox"]
 
                         if cls in search_params["selected_classes"]:
-                            color = "#30C938"
+                            color = "#F70A0A"
                             # color = "#FF4B4B"
                             thickess = 3
                         elif not st.session_state.highlight_matches:
