@@ -1,8 +1,5 @@
 from ultralytics import YOLO
-import torch
-from PIL import Image
 from pathlib import Path
-import numpy as np
 
 # this is possible because we added root directory to system path in app.py
 from src.config import load_config
@@ -44,22 +41,22 @@ class YOLO_V11_Inference:
                 # update the count for the detected class
                 class_counts[cls] = class_counts.get(cls, 0) + 1
 
-                # update the count for each detection in the metadata
-                for det in detections:
-                    det["count"] = class_counts[det["class"]]
+        # update the count for each detection in the metadata
+        for det in detections:
+            det["count"] = class_counts[det["class"]]
 
-                return {
-                    "image_path": str(image_path),
-                    "detections": detections,
-                    "total_objects": len(detections),
-                    "unique_classes": list(class_counts.keys()),
-                    "class_counts": class_counts,
-                }
+        return {
+            "image_path": str(image_path),
+            "detections": detections,
+            "total_objects": len(detections),
+            "unique_classes": list(class_counts.keys()),
+            "class_counts": class_counts,
+        }
 
     def process_directory(self, directory):
         metadata = []
 
-        patterns = [f"{ext}" for ext in self.extensions]
+        patterns = [f"*{ext}" for ext in self.extensions]
 
         image_paths = []
 
@@ -69,7 +66,9 @@ class YOLO_V11_Inference:
         for img_path in image_paths:
             try:
                 # add the output of the process_image function in metadata
-                metadata.extend(self.process_images(image_path=img_path))
+                metadata.append(self.process_images(image_path=img_path))
             except Exception as e:
                 print(f"Error processing {img_path}: {str(e)}")
                 continue
+
+        return metadata
