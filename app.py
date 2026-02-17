@@ -1,7 +1,6 @@
 import io
 import sys
 import json
-import time
 import base64
 import streamlit as st
 from pathlib import Path
