@@ -11,7 +11,7 @@ from pathlib import Path
 # ensure the processed directory exists and return the path to save metadata
 def ensure_processed_path(raw_path):
     raw_path = Path(raw_path)
-    processed_path = raw_path.parent.parent / "processed" / raw_path.parent.name
+    processed_path = raw_path.parent.parent.parent / "processed" / raw_path.parent.name
     processed_path.mkdir(parents=True, exist_ok=True)
     return processed_path
 
@@ -30,7 +30,7 @@ def load_metadata(metadata_path):
     metadata_path = Path(metadata_path)
     if not metadata_path.exists():
         processed_path = (
-            metadata_path.parent.parent
+            metadata_path.parent.parent.parent
             / "processed"
             / metadata_path.name
             / "metadata.json"

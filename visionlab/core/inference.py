@@ -2,7 +2,7 @@ from ultralytics import YOLO
 from pathlib import Path
 
 # this is possible because we added root directory to system path in app.py
-from src.config import load_config
+from visionlab.configs.config import load_config
 
 
 class YOLO_V11_Inference:

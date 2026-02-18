@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "visionlab"
+version = "0.1.0"
+description = "VisionLab - Production-ready Computer Vision System with YOLO"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "Joab David Johanan" }
+]
+license = { text = "MIT" }
+
+dependencies = [
+    "ultralytics",
+    "streamlit",
+    "opencv-python",
+    "pyyaml",
+    "torch",
+    "torchvision",
+    "pillow",
+    "pandas",
+    "numpy"
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["visionlab*"]
+
+[tool.setuptools]
+package-dir = {"" = "."}

@@ -7,8 +7,8 @@ from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
 
 
-from src.inference import YOLO_V11_Inference
-from src.utils import save_metadata, load_metadata, get_unique_class_counts
+from visionlab.core.inference import YOLO_V11_Inference
+from visionlab.core.utils import save_metadata, load_metadata, get_unique_class_counts
 
 # streamlit run app.py --> runs by default on port 8501
 # streamlit run app.py --server.port 8080 --> runs by the custom specified port 8080
