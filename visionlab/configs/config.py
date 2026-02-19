@@ -2,7 +2,9 @@ import yaml
 
 
 # loading from a config file in read mode
-def load_config(config_path=r"configs\default.yaml"):
+def load_config(
+    config_path=r"C:\Coding\Projects\Image_search\Yolo_image_search\visionlab\configs\default.yaml",
+):
     with open(config_path, "r") as f:
         config = yaml.safe_load(f)
     return config
