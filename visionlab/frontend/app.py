@@ -129,7 +129,9 @@ if user_option == "Process new images":
                 "Image directory path: ", placeholder=r"path\to\images"
             )
         with col2:
-            model_weights = st.text_input("Model weights path: ", "yolo11m.pt")
+            model_weights = st.selectbox(
+                "Choose your model ", ("yolo11m.pt", "yolo26m.pt")
+            )
 
         # button for processing
         if st.button("Start Inference"):

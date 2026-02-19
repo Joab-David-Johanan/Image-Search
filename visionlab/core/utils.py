@@ -11,39 +11,46 @@ from pathlib import Path
 # ensure the processed directory exists and return the path to save metadata
 def ensure_processed_path(raw_path):
     raw_path = Path(raw_path)
-    processed_path = raw_path.parent.parent.parent / "processed" / raw_path.parent.name
+    processed_path = (
+        raw_path.parent / "Yolo_image_search" / "processed" / raw_path.parent.name
+    )
     processed_path.mkdir(parents=True, exist_ok=True)
     return processed_path
 
 
 # save metadata to the processed directory with the same name as the raw image
-def save_metadata(metadata, raw_path):
+def save_metadata(metadata, raw_path, model_weights):
     processed_path = ensure_processed_path(raw_path)
-    output_path = processed_path / "metadata.json"
+    # extract model name without path
+    model_name = Path(model_weights).stem  # yolo11m.pt → yolo11m
+    output_path = processed_path / f"metadata_{model_name}.json"
     with open(output_path, "w") as f:
-        json.dump(metadata, f)
+        json.dump(metadata, f, indent=2)
     return output_path
 
 
-# load metadata from a given path
-def load_metadata(metadata_path):
-    metadata_path = Path(metadata_path)
-    if not metadata_path.exists():
-        processed_path = (
-            metadata_path.parent.parent.parent
-            / "processed"
-            / metadata_path.name
-            / "metadata.json"
-        )
-        if processed_path.exists():
-            metadata_path = processed_path
+# process the uploaded metadata from user
+def load_metadata(metadata_uploaded):
+
+    if metadata_uploaded is None:
+        raise ValueError("No file uploaded")
+
+    try:
+        metadata_json = json.load(metadata_uploaded)
+
+        # wrapped format
+        if "data" in metadata_json:
+            metadata = metadata_json["data"]
         else:
-            raise FileNotFoundError(
-                f"Metadata file not found at {metadata_path} or {processed_path}"
-            )
-    with open(metadata_path, "r") as f:
-        metadata = json.load(f)
-    return metadata
+            metadata = metadata_json
+
+        if not isinstance(metadata, list):
+            raise ValueError("Invalid metadata format")
+
+        return metadata
+
+    except Exception as e:
+        raise ValueError(f"Failed to read metadata: {str(e)}")
 
 
 # get unique class counts from metadata

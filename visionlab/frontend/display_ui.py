@@ -1,11 +1,11 @@
 import streamlit as st
 from pathlib import Path
-from PIL import Image
+
 from visionlab.frontend.utils_ui import img_to_base64
 from visionlab.frontend.utils_ui import draw_boxes  # if using cached box drawing
 
 
-def render_results():
+def render_display():
     if not st.session_state.search_results:
         return
 
