@@ -9,6 +9,9 @@
 # model weights
 *.pt
 
+# metadata
+processed/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
