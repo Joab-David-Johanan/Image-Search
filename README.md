@@ -1,9 +1,9 @@
-![Python](https://img.shields.io/badge/Python-3.10-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-red)
-![YOLO](https://img.shields.io/badge/YOLO-Object%20Detection-green)
-![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-brightgreen)
-![FastAPI](https://img.shields.io/badge/FastAPI-Backend-teal)
-![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Image%20Search-purple)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
+![YOLO](https://img.shields.io/badge/YOLO-Object%20Detection-00FFFF?style=for-the-badge)
+![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Image%20Search-8A2BE2?style=for-the-badge)
 
 ---
 
@@ -42,6 +42,18 @@ The application includes:
 - **Bounding box visualization**
 - **Streamlit-based UI for image exploration**
 - **Flexible filtering using logical search conditions**
+
+![Car and Bus](assets/car_bus.png)
+
+This showcases the detection power of the YOLOv26x model on images containing both `car` class and `bus` class.
+
+![Banana and Person](assets/banana_person.png)
+
+Here we see an example of images containing both `Person` class and `Banana` class.
+
+![Person and Baseball](assets/person_baseball.png)
+
+This example showcases images containing both `Person` class and `Baseball glove` class.
 
 [⬆ Back to Top](#table-of-contents)
 

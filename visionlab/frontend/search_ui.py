@@ -10,7 +10,7 @@ def render_search_section():
 
         st.header("Search Section")
 
-        st.success(f"Using: {Path(str(st.session_state.metadata)).stem}")
+        # st.success(f"Using: {Path(str(st.session_state.metadata)).stem}")
 
         with st.container():
 
