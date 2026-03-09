@@ -42,13 +42,19 @@ The application includes:
 - **Streamlit-based UI for image exploration**
 - **Flexible filtering using logical search conditions**
 
+---
+
 ![Car and Bus](assets/car_bus.png)
 
 This showcases the detection power of the YOLOv26x model on images containing both `car` class and `bus` class.
 
+---
+
 ![Banana and Person](assets/banana_person.png)
 
 Here we see an example of images containing both `Person` class and `Banana` class.
+
+---
 
 ![Person and Baseball](assets/person_baseball.png)
 
