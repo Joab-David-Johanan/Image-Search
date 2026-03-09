@@ -2,8 +2,7 @@
 ![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
 ![YOLO](https://img.shields.io/badge/YOLO-Object%20Detection-00FFFF?style=for-the-badge)
 ![Streamlit](https://img.shields.io/badge/Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)
-![FastAPI](https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white)
-![Vision App](https://img.shields.io/badge/Computer%20Vision-Image%20Search-8A2BE2?style=for-the-badge)
+![Computer Vision](https://img.shields.io/badge/Computer%20Vision-Image%20Search-8A2BE2?style=for-the-badge)
 
 ---
 
